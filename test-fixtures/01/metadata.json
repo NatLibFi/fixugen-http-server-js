@@ -1,0 +1,9 @@
+{
+  "description": "Should respond with simple options",
+  "requests": [
+    {
+      "method": "get",
+      "status": 200
+    }
+  ]
+}
