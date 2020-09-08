@@ -5,6 +5,7 @@ Generates unit tests with fixugen and [chai-http](). Starts a HTTP server which 
 Uses [fixugen's](https://www.npmjs.com/package/@natlibfi/fixugen) **useMetadataFile** so your fixture directories must contain **metadata.json** file.
 
 # Usage
+```js
 import generateTests from '@natlibfi/fixugen-http-server';
 import startApp from './app';
 
@@ -20,7 +21,7 @@ An array property **requests** must be present in **metadata.json** file. It sup
 - **method**: HTTP method in lowercase. **Mandatory**.
 - **path**: URL path. Defaults to `/`
 - **requestHeaders**: An object representing requests headers.
-- **responseHeaders**: An object representing response headers. 
+- **responseHeaders**: An object representing response headers.
 
 This configuration is also passed to the callback as the property **requests**.
 
@@ -34,7 +35,7 @@ Pass a callback to the exported function to format response headers and payload:
 ```js
 generateTests({
   formatResponse,
-  callback: () => startApp(),  
+  callback: () => startApp(),
   path: [__dirname, '..', '..', 'test-fixtures', 'app']
 });
 
