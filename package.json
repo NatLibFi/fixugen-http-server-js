@@ -63,9 +63,7 @@
 			[
 				"@babel/preset-env",
 				{
-					"targets": {
 						"targets": "maintained node versions"
-					}
 				}
 			]
 		],
