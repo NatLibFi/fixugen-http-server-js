@@ -1,4 +1,4 @@
-# Generate unit tests for HTTP servers with fixugen [![NPM Version](https://img.shields.io/npm/v/@natlibfi/fixugen-http-server-js.svg)](https://npmjs.org/package/@natlibfi/fixugen-http-server) [![Node Version](https://img.shields.io/node/v/@natlibfi/fixugen-http-server.svg)]()
+# Generate unit tests for HTTP servers with fixugen [![NPM Version](https://img.shields.io/npm/v/@natlibfi/fixugen-http-server.svg)](https://npmjs.org/package/@natlibfi/fixugen-http-server) [![Node Version](https://img.shields.io/node/v/@natlibfi/fixugen-http-server.svg)]()
 
 
 Generates unit tests with fixugen and [chai-http](). Starts a HTTP server which is tested with generic HTTP request and response expectations.
