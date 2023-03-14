@@ -1,4 +1,6 @@
 # Generate unit tests for HTTP servers with fixugen
+[![NPM Version](https://img.shields.io/npm/v/@natlibfi/fixugen-http-server.svg)](https://npmjs.org/package/@natlibfi/fixugen-http-server) [![Node Version](https://img.shields.io/node/v/@natlibfi/fixugen-http-server.svg)]()
+
 
 Generates unit tests with fixugen and [chai-http](). Starts a HTTP server which is tested with generic HTTP request and response expectations.
 
@@ -49,6 +51,6 @@ Where `[0-9]+` denotes the index number of the fixture (Requests and responses a
 
 ## License and copyright
 
-Copyright (c) 2020, 2022 **University Of Helsinki (The National Library Of Finland)**
+Copyright (c) 2020, 2022-2023 **University Of Helsinki (The National Library Of Finland)**
 
 This project's source code is licensed under the terms of **GNU Lesser General Public License Version 3** or any later version.
