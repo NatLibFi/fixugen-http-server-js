@@ -14,7 +14,7 @@
 		"url": "git@github.com:natlibfi/fixugen-http-server-js.git"
 	},
 	"license": "LGPL-3.0+",
-	"version": "1.1.2",
+	"version": "1.1.4-alpha.1",
 	"main": "dist/index.js",
 	"engines": {
 		"node": ">=18"
@@ -34,27 +34,27 @@
 		"watch:test": "cross-env DEBUG=1 NODE_ENV=test nodemon -w src -w test-fixtures --exec 'npm run test:dev'"
 	},
 	"dependencies": {
-		"@natlibfi/fixugen": "^1.1.0",
-		"@natlibfi/fixura": "^3.0.0-alpha.1",
-		"chai-http": "^4.3.0"
+		"@natlibfi/fixugen": "^2.0.0",
+		"@natlibfi/fixura": "^3.0.0",
+		"chai-http": "^4.4.0"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.21.0",
-		"@babel/core": "^7.21.0",
-		"@babel/eslint-parser": "^7.19.1",
-		"@babel/node": "^7.20.7",
-		"@babel/preset-env": "^7.20.2",
-		"@babel/register": "^7.21.0",
+		"@babel/cli": "^7.22.5",
+		"@babel/core": "^7.22.5",
+		"@babel/eslint-parser": "^7.22.5",
+		"@babel/node": "^7.22.5",
+		"@babel/preset-env": "^7.22.5",
+		"@babel/register": "^7.22.5",
 		"@natlibfi/eslint-config-melinda-backend": "^2.0.2",
 		"babel-plugin-istanbul": "^6.1.1",
 		"chai": "^4.3.7",
 		"cross-env": "^7.0.3",
-		"eslint": "^8.36.0",
+		"eslint": "^8.43.0",
 		"express": "^4.18.2",
 		"mocha": "^10.2.0",
-		"node-fetch": "^2.6.9",
-		"nodemon": "^2.0.21",
-		"nyc": "^15.0.1"
+		"node-fetch": "^2.6.11",
+		"nodemon": "^2.0.22",
+		"nyc": "^15.1.0"
 	},
 	"eslintConfig": {
 		"extends": "@natlibfi/melinda-backend"
