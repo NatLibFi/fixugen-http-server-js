@@ -37,7 +37,7 @@
 	},
 	"dependencies": {
 		"@natlibfi/fixugen": "^2.0.5",
-		"@natlibfi/fixura": "^3.0.4",
+		"@natlibfi/fixura": "^3.0.5",
 		"chai-http": "^4.4.0"
 	},
 	"devDependencies": {
