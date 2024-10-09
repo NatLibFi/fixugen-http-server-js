@@ -14,7 +14,7 @@
 		"url": "git@github.com:natlibfi/fixugen-http-server-js.git"
 	},
 	"license": "MIT",
-	"version": "1.1.15",
+	"version": "1.1.16-alpha.1",
 	"main": "dist/index.js",
 	"engines": {
 		"node": ">=18"
