@@ -14,7 +14,7 @@
 		"url": "git@github.com:natlibfi/fixugen-http-server-js.git"
 	},
 	"license": "MIT",
-	"version": "1.1.19",
+	"version": "1.1.20-alpha.1",
 	"main": "dist/index.js",
 	"engines": {
 		"node": ">=18"
@@ -36,23 +36,23 @@
 		"dev:debug": "cross-env LOG_LEVEL=debug DEBUG=@natlibfi/* NODE_ENV=test nodemon"
 	},
 	"dependencies": {
-		"@natlibfi/fixugen": "^2.0.14",
-		"@natlibfi/fixura": "^3.0.13",
+		"@natlibfi/fixugen": "^2.0.15",
+		"@natlibfi/fixura": "^3.0.14",
 		"chai-http": "^4.4.0"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.27.1",
-		"@babel/core": "^7.27.1",
+		"@babel/cli": "^7.27.2",
+		"@babel/core": "^7.27.4",
 		"@babel/node": "^7.27.1",
-		"@babel/preset-env": "^7.27.1",
+		"@babel/preset-env": "^7.27.2",
 		"@babel/register": "^7.27.1",
-		"@natlibfi/eslint-config-melinda-backend": "^3.0.5",
+		"@natlibfi/eslint-config-melinda-backend": "^3.0.6",
 		"babel-plugin-istanbul": "^7.0.0",
 		"chai": "^4.5.0",
 		"cross-env": "^7.0.3",
 		"eslint": "^8.57.1",
 		"express": "^4.21.2",
-		"mocha": "^11.2.2",
+		"mocha": "^11.7.1",
 		"nodemon": "^3.1.10",
 		"nyc": "^17.1.0"
 	},
