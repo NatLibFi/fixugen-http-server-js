@@ -2,7 +2,7 @@
 [![NPM Version](https://img.shields.io/npm/v/@natlibfi/fixugen-http-server.svg)](https://npmjs.org/package/@natlibfi/fixugen-http-server) [![Node Version](https://img.shields.io/node/v/@natlibfi/fixugen-http-server.svg)]()
 
 
-Generates unit tests with fixugen and [chai-http](). Starts a HTTP server which is tested with generic HTTP request and response expectations.
+Generates unit tests with fixugen. Starts a HTTP server which is tested with generic HTTP request and response expectations.
 
 Uses [fixugen's](https://www.npmjs.com/package/@natlibfi/fixugen) **useMetadataFile** so your fixture directories must contain **metadata.json** file.
 
