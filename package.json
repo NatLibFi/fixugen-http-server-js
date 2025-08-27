@@ -37,14 +37,14 @@
 	"dependencies": {
 		"@natlibfi/fixugen": "^3.0.0-alpha.5",
 		"@natlibfi/fixura": "^4.0.0-alpha.12",
-		"chai": "^5.3.1",
+		"chai": "^5.3.3",
 		"chai-http": "^5.1.2",
 		"debug": "^4.4.1"
 	},
 	"devDependencies": {
 		"cross-env": "^10.0.0",
 		"esbuild": "^0.25.9",
-		"eslint": "^9.33.0",
+		"eslint": "^9.34.0",
 		"express": "^5.1.0"
 	}
 }
