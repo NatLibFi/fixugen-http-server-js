@@ -9,11 +9,11 @@ Uses [fixugen's](https://www.npmjs.com/package/@natlibfi/fixugen) **useMetadataF
 # Usage
 ```js
 import generateTests from '@natlibfi/fixugen-http-server';
-import startApp from './app';
+import startApp from './app.js';
 
 generateTests({
   callback: () => startApp(),
-  path: [__dirname, '..', '..', 'test-fixtures', 'app']
+  path: [import.meta.dirname, '..', '..', 'test-fixtures', 'app']
 });
 
 ```
@@ -41,11 +41,14 @@ generateTests({
   path: [__dirname, '..', '..', 'test-fixtures', 'app']
 });
 
-function formatResponse(headers, payload) {
+// Note: version > 2 requires response as input for formatResponse instead of headers and payload
+function formatResponse(response) {
+  const payload = await response.text(); // or which ever method is used for reading payload
   const newHeaders = doSomethingWithHeaders();
   return { payload, headers: newHeaders };
 }
 ```
+
 
 Where `[0-9]+` denotes the index number of the fixture (Requests and responses are mocked in that order).
 
