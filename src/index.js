@@ -38,7 +38,6 @@ export default ({path, recurse, formatResponse = formatResponseDefault, callback
 
     return;
 
-    // eslint-disable-next-line
     async function iterate(testRequests, server, index = 0) {
       const [testRequest, ...rest] = testRequests;
 
@@ -62,31 +61,30 @@ export default ({path, recurse, formatResponse = formatResponseDefault, callback
       const url = `http://localhost:1337${requestPath}${parsedParams === '' ? '' : '?' + parsedParams}`;
       debugDev(url);
       const response = await fetch(url, {method: requestMethod, headers: requestHeaders, body: requestPayload});
-
       await handleResponse(response, status, responseHeaders);
       return iterate(rest, server, index + 1);
 
 
       async function handleResponse(response, status, responseHeaders) {
         debug('Handling response');
+        // Note: formatResponse requires response itself as input
         const {headers, payload} = await formatResponse(response);
         const expectedResponsePayload = responseFixtures[index];
-        debugDev('status');
-        debugDev(status);
-        debugDev(response.status);
+        debugDev(`status: ${status} vs response.status: ${response.status}`);
         assert.equal(response.status, status);
-
+        debugDev(`Status OK`);
         debugDev('responseHeaders');
         debugDev(responseHeaders);
-        //debugDev(headers);
-
+        debugDev(headers);
         Object.entries(responseHeaders).forEach(([key, value]) => {
           assert.equal(headers.get(key), value);
         });
+        debugDev(`Headers OK`);
 
         if (expectedResponsePayload) {
           debugDev('expectedResponsePayload');
           debugDev(expectedResponsePayload);
+          debugDev('actual payload');
           debugDev(payload);
           assert.equal(payload, expectedResponsePayload);
         }
