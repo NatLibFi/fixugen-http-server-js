@@ -3,7 +3,7 @@ import express from 'express';
 import {promisify} from 'util';
 import generateTests from './index.js';
 
-const setTimeoutPromise = promisify(setTimeout); // eslint-disable-line
+const setTimeoutPromise = promisify(setTimeout);
 const debug = createDebugLogger('@natlibfi/fixugen-http-server:test');
 const debugDev = createDebugLogger('@natlibfi/fixugen-http-server:test:dev');
 
