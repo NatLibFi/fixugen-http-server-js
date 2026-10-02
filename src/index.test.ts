@@ -11,16 +11,32 @@ const debug = createDebugLogger('@natlibfi/fixugen-http-server:test');
 const debugDev = createDebugLogger('@natlibfi/fixugen-http-server:test:dev');
 
 function addRoute(app: Express, method: string, path: string, handler: (_req: Request, _res: Response) => void): void {
-  switch (method.toLowerCase()) {
-    case 'get': app.get(path, handler); break;
-    case 'post': app.post(path, handler); break;
-    case 'put': app.put(path, handler); break;
-    case 'delete': app.delete(path, handler); break;
-    case 'patch': app.patch(path, handler); break;
-    case 'head': app.head(path, handler); break;
-    case 'options': app.options(path, handler); break;
-    default: throw new Error(`Unsupported HTTP method: ${method}`);
+  if (method.toUpperCase() === 'GET') {
+    app.get(path, handler);
+    return;
   }
+
+  if (method.toUpperCase() === 'POST') {
+    app.post(path, handler);
+    return;
+  }
+
+  if (method.toUpperCase() === 'PUT') {
+    app.put(path, handler);
+    return;
+  }
+
+  if (method.toUpperCase() === 'DELETE') {
+    app.delete(path, handler);
+    return;
+  }
+
+  if (method.toUpperCase() === 'PATCH') {
+    app.patch(path, handler);
+    return;
+  }
+
+  throw new Error(`Unsupported HTTP method: ${method}`);
 }
 
 generateTests({
