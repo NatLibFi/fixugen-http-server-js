@@ -2,7 +2,7 @@ import assert from 'node:assert';
 import type {Server} from 'node:http';
 import {READERS} from '@natlibfi/fixura';
 import generateTests from '@natlibfi/fixugen';
-import type {CallbackArgs, FixugenOpts} from '@natlibfi/fixugen';
+import type {CallbackArgs} from '@natlibfi/fixugen';
 import createDebugLogger from 'debug';
 import type {Headers, Response} from 'undici-types';
 
@@ -26,7 +26,15 @@ export type FormatResponse = (_response: Response) => Promise<FormatResponseResu
 
 export type CreateApp = (_args: CallbackArgs & {requests: HttpRequest[]}) => Promise<Server>;
 
-export interface HttpServerOpts extends Pick<FixugenOpts, 'path' | 'recurse' | 'hooks'> {
+export interface HttpServerOpts {
+  path: string[];
+  recurse?: boolean;
+  hooks?: {
+    before?: () => void;
+    beforeEach?: () => void;
+    after?: () => void;
+    afterEach?: () => void;
+  };
   formatResponse?: FormatResponse;
   callback: CreateApp;
 }
