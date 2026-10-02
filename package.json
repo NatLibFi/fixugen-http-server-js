@@ -17,31 +17,37 @@
 	"main": "dist/index.js",
 	"type": "module",
 	"engines": {
-		"node": ">=22"
+		"node": ">=24"
 	},
 	"publishConfig": {
 		"access": "public"
 	},
 	"scripts": {
 		"prepare": "npm run build",
-		"build": "esbuild src/**/*.js --sourcemap --platform=node --main-fields=main --outdir=dist --allow-overwrite --analyze",
+		"build": "rm -rf dist && tsc",
 		"lint": "eslint ./src",
 		"lint:dev": "eslint --fix ./src",
 		"test": "npm run lint && npm run test:base",
-		"test:base": "node --test --experimental-test-coverage --test-reporter=spec './src/*.test.js'",
-		"watch:test": "cross-env DEBUG=@natlibfi/* NODE_ENV=test node --watch --test --experimental-test-coverage --test-reporter=spec './src/*.test.js'",
+		"test:base": "node --test --experimental-test-coverage --test-reporter=spec './src/*.test.ts'",
+		"watch:test": "cross-env DEBUG=@natlibfi/* NODE_ENV=test node --watch --test --experimental-test-coverage --test-reporter=spec './src/*.test.ts'",
 		"dev": "npm run watch:test",
 		"dev:debug": "cross-env LOG_LEVEL=debug DEBUG=@natlibfi/* NODE_ENV=test npm run watch:test"
 	},
 	"dependencies": {
-		"@natlibfi/fixugen": "^3.0.0",
-		"@natlibfi/fixura": "^4.0.1",
-		"debug": "^4.4.3"
+		"@natlibfi/fixugen": "^4.0.0",
+		"@natlibfi/fixura": "^5.0.0",
+		"debug": "^4.4.3",
+		"undici-types": "^8.11.2"
 	},
 	"devDependencies": {
+		"@types/debug": "^4.1.13",
+		"@types/express": "^5.0.6",
+		"@types/node": "^26.6.3",
 		"cross-env": "^10.1.0",
-		"esbuild": "^0.27.3",
-		"eslint": "^10.0.2",
-		"express": "^5.2.1"
+		"eslint": "^10.11.0",
+		"express": "^5.2.1",
+		"jiti": "^2.7.0",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.70.1"
 	}
 }
