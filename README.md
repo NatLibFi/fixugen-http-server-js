@@ -1,6 +1,11 @@
 # Generate unit tests for HTTP servers with fixugen
-[![NPM Version](https://img.shields.io/npm/v/@natlibfi/fixugen-http-server.svg)](https://npmjs.org/package/@natlibfi/fixugen-http-server) [![Node Version](https://img.shields.io/node/v/@natlibfi/fixugen-http-server.svg)]()
+[![NPM Version](https://img.shields.io/npm/v/@natlibfi/fixugen-http-server.svg)](https://npmjs.org/package/@natlibfi/fixugen-http-server)
 
+## Workflow status
+| Branch | Workflow status                                                                                                                                        |
+|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| main   | ![Workflow status badge for branch main](https://github.com/NatLibFi/fixugen-http-server-js/actions/workflows/melinda-node-tests-and-publish.yml/badge.svg?branch=main) |
+| test   | ![Workflow status badge for branch test](https://github.com/NatLibFi/fixugen-http-server-js/actions/workflows/melinda-node-tests-and-publish.yml/badge.svg?branch=test) |
 
 Generates unit tests with fixugen. Starts a HTTP server which is tested with generic HTTP request and response expectations.
 
