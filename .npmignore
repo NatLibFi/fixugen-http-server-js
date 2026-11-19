@@ -1,2 +1,6 @@
 coverage
 .nyc_output
+
+# private workspace
+workspace/
+.issues/

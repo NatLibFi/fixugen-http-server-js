@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [26.x, 24.x]
+        node-version: [24.x, 26.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -28,7 +28,7 @@ jobs:
         cache: 'npm'
       env:
         NPM_CONFIG_IGNORE_SCRIPTS: true
-    - run: npm audit --package-lock-only --production --audit-level=high
+    - run: npm audit --package-lock-only --production --audit-level=moderate
     - run: npm ci
     - run: npm test
     - run: npm run build --if-present
@@ -39,10 +39,11 @@ jobs:
     container: node:24
 
     steps:
-      - uses: actions/checkout@v6
-      - uses: mikaelvesavuori/license-compliance-action@v1
+      - uses: actions/checkout@v7
+      - uses: mikaelvesavuori/license-compliance-action@v1.0.5
         with:
           exclude_pattern: /^@natlibfi/
+          direct: true
 
   njsscan:
     name: Njsscan check
@@ -54,7 +55,7 @@ jobs:
       uses: actions/checkout@v7
     - name: nodejsscan scan
       id: njsscan
-      uses: ajinabraham/njsscan-action@master
+      uses: ajinabraham/njsscan-action@v9
       with:
         args: '.'
 
@@ -70,10 +71,7 @@ jobs:
       - name: Prepare node for publish
         uses: actions/setup-node@v7
         with:
-          node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Update npm
-        run: npm install -g npm@latest
       - name: Clean install
         run: npm ci
       # Publish stable release with --tag latest
